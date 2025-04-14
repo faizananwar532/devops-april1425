@@ -1,0 +1,23 @@
+name: devops-tasks-april14
+on:
+  push:
+    branches:
+    - 'main'
+
+jobs:
+  Run-npm-on-Ubuntu:
+    name: Run on Ubuntu
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - id: 'auth'
+      uses: 'google-github-actions/auth@v2'
+      with:
+        service_account: '${{ secrets.GOOGLE_CREDENTIALS }}'
+
+    - id: 'upload-file'
+      uses: 'google-github-actions/upload-cloud-storage@v2'
+      with:
+        path: './app'
+        destination: 'devops-static-site-april14'
