@@ -16,7 +16,7 @@ jobs:
       with:
         project_id: 'devops-project-123-456810'
         create_credentials_file: false
-        service_account: ${{ secrets.GOOGLE_CREDENTIALS }}
+        credentials_json: ${{ secrets.GOOGLE_CREDENTIALS }}
 
     - id: 'upload-file'
       uses: 'google-github-actions/upload-cloud-storage@v2'
