@@ -14,6 +14,7 @@ jobs:
     - id: 'auth'
       uses: 'google-github-actions/auth@v2'
       with:
+        project_id: 'devops-project-123-456810'
         create_credentials_file: false
         service_account: ${{ secrets.GOOGLE_CREDENTIALS }}
 
